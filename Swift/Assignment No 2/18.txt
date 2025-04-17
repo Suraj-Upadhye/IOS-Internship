@@ -1,0 +1,22 @@
+struct RunningWorkout {
+    var distance: Double
+    var time: Double
+    var elevation: Double
+
+    static let meterInFeet = 3.28084
+    static let mileInMeters = 1600.0
+
+    static func mileTimeFor(distance: Double, time: Double) -> Double {
+        let miles = distance / mileInMeters
+        return time / miles
+    }
+}
+
+print("Meters in a foot: \(RunningWorkout.meterInFeet)")
+print("Meters in a mile: \(RunningWorkout.mileInMeters)")
+
+let distance = 5000.0 
+let time = 1500.0 
+
+let averageMileTime = RunningWorkout.mileTimeFor(distance: distance, time: time)
+print("Average mile time for \(distance) meters in \(time) seconds is \(averageMileTime) seconds.")
